@@ -1,22 +1,23 @@
 ![image_squidhome@2x.png](http://i.imgur.com/RIvu9.png) 
 
-# BoilerplateAdapter
+# Parse API Adapter
 
-This template exists to make it easier for you to get started writing an official adapter for Sails.js.
-
+Integrate Sails.js with Parse API.
 
 ## Getting started
-It's usually pretty easy to add your own adapters for integrating with proprietary systems or existing open APIs.  For most things, it's as easy as `require('some-module')` and mapping the appropriate methods to match waterline semantics.  To get started:
-
-1. Fork this repository
-2. Set up your README and package.json file.  Sails.js adapter module names are of the form sails-*, where * is the name of the datastore or service you're integrating with.
-3. Build your adapter.
+1. Add sails-parse to your Sails.js project dependencies.
+2. Run <code>npm install</code>.
+2. Set up your Parse configuration at <code>config/adpters.js</code> as following:
+<code>
+parse: {
+    module: 'sails-parse',
+    appId: 'LueX7LyLu0ngWmEzqk4ge8emkQqgPi1RCeDx5Gm9',
+    masterKey: '1B174DCGWCBO19tHxtj9Yei15TJgTLqfqLi1J9mA'
+}
+</code>
 
 ## How to test your adapter
-1. Run `npm link` in this adapter's directory
-2. Clone the sails.js core and modify the tests to use your new adapter.
-3. Run `npm link sails-boilerplate`
-4. From the sails.js core directory, run `npm test`.
+Not implemented yet. Sorry :(
 
 ## Submitting your adapter
 1. Do a pull request to this repository (make sure you attribute yourself as the author set the license in the package.json to "MIT")  Please let us know about any special instructions for usage/testing.

@@ -11,8 +11,8 @@ Integrate Sails.js with Parse API.
 <code>
 parse: {
     module: 'sails-parse',
-    appId: 'LueX7LyLu0ngWmEzqk4ge8emkQqgPi1RCeDx5Gm9',
-    masterKey: '1B174DCGWCBO19tHxtj9Yei15TJgTLqfqLi1J9mA'
+    appId: 'your-app-id',
+    restKey: 'your-rest-key'
 }
 </code>
 

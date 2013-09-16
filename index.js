@@ -4,7 +4,7 @@
 ---------------------------------------------------------------*/
 
 var async = require('async');
-var Parse = require('node-parse-api').Parse;
+var Kaiseki = require('kaiseki');
 
 var adapter = {
 
@@ -12,69 +12,74 @@ var adapter = {
 
   defaults: {
     appId: '',
-    masterKey: ''
+    masterKey: '',
+    restKey: ''
   },
   getParse: function() {
     if(this.parse == undefined)
-      this.parse = new Parse(this.config.appId, this.config.masterKey);
-
+      this.parse = new Kaiseki(this.config.appId, this.config.restKey);
       return this.parse;
   },
   parse: undefined,
 
   // This method runs when a model is initially registered at server start time
   registerCollection: function(collection, cb) {
-
     cb();
   },
 
-
   // REQUIRED method if users expect to call Model.create() or any methods
   create: function(collectionName, values, cb) {
-    this.getParse().insert(collectionName, values, function(err, response) {
-      if(err) {
-        console.log(err);
-        cb(false);
-      }
-      else{
-        cb(null, response);
-      }
-    })
+    this.getParse().createObject(collectionName, values, 
+      function(err, res, body, success) {
+         if(err) {
+            console.log(err);
+            cb(false);
+          }
+          else{
+            cb(null, body);
+          }
+      });
   },
 
   find: function(collectionName, options, cb) {
-    if(options.where == undefined)
+    if(options.where == null)
       options.where = {};
-    this.getParse().findMany(collectionName, options.where, function(err, response) {
-      if(err) console.log(err);
-      cb(null, response.results);
-    }); 
+    if(options.limit == undefined)
+      options.limit = 9999;
+    this.getParse().getObjects(collectionName, options, 
+      function(err, res, body, success) {
+        if(err) console.log(err);
+        cb(null, body);
+      });
   },
 
   findOne: function(collectionName, id, cb) {
-    this.getParse().find(collectionName, id, function(err, response) {
-      cb();
-    })
+    this.getParse().getObject(collectionName, id, 
+      function(err, res, body, success) {
+        cb(null, body);
+      });
   },
 
-  // REQUIRED method if users expect to call Model.update()
   update: function(collectionName, options, values, cb) {
-    this.getParse().update(collectionName, options.where.objectId, values, 
-      function(err, response) {
-          if(err) {
-            console.log(err);
-          } else {
-            cb(null, response);
-          }
-      })
+    this.getParse().updateObject(collectionName, options.where.objectId, values,
+      function(err, res, body, success) {
+        if(err) {
+          console.log(err);
+        } else {
+          cb(null, body);
+        }
+      });
   },
 
-  // REQUIRED method if users expect to call Model.destroy()
   destroy: function(collectionName, options, cb) {
-    this.getParse().delete(collectionName, options.where.objectId, function(err) {
-      if(err) console.log(err);
-      cb();
-    })
+    this.getParse().deleteObject(collectionName, options.where.objectId,
+      function(err, res, body, success) {
+        if(err) {
+          console.log(err);
+        } else {
+          cb(null, body);
+        }
+      });
   },
 
 };

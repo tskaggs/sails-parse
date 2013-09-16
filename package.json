@@ -23,6 +23,6 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "async": "0.1.22",
-    "node-parse-api": "*"
+    "kaiseki": "*"
   }
 }

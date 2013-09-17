@@ -29,6 +29,8 @@ var adapter = {
 
   // REQUIRED method if users expect to call Model.create() or any methods
   create: function(collectionName, values, cb) {
+    if(values.objectId != undefined)
+      delete values.objectId;
     this.getParse().createObject(collectionName, values, 
       function(err, res, body, success) {
          if(err) {

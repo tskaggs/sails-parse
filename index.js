@@ -118,6 +118,19 @@ var adapter = {
         else
           cb(null, body);
       })
+  },
+
+  login: function(collectionName, options, cb) {
+    if(collectionName == 'user' 
+      && options.username != undefined 
+      && options.password != undefined) {
+        adapter.getParse().loginUser(options.username, options.password,
+          function(err, res, body, success) {
+            cb(err, body);
+        })
+    } else {
+      throw 'Colé, mané?';
+    }
   }
 
 };

@@ -19,11 +19,19 @@
     "parse"
   ],
   "author": "Murilo Polese",
-  "license": "MIT",
+  "license": "BSD",
   "readmeFilename": "README.md",
   "dependencies": {
     "async": "0.1.22",
     "underscore": "*",
     "kaiseki": "*"
-  }
+  },
+  "gitHead": "01978907dd4610820ed0e86578a5381be02ad99e",
+  "bugs": {
+    "url": "https://github.com/murilopolese/sails-parse/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }

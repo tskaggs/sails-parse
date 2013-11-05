@@ -121,7 +121,7 @@ var adapter = {
   },
 
   login: function(collectionName, options, cb) {
-    if(collectionName == 'user' 
+    if(collectionName == '_User' 
       && options.username != undefined 
       && options.password != undefined) {
         adapter.getParse().loginUser(options.username, options.password,

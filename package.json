@@ -1,37 +1,65 @@
 {
   "name": "sails-parse",
-  "version": "0.2.0",
+  "version": "0.10.0",
   "description": "Parse.com API adapter",
-  "main": "index.js",
+  "main": "./lib/adapter.js",
   "scripts": {
-    "test": "echo \"Adapter should be tested using Sails.js core.\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/murilopolese/sails-parse.git"
+    "test": "node test/integration/runner -R spec -b"
   },
   "keywords": [
+    "parse",
     "orm",
     "waterline",
-    "sails",
-    "sailsjs",
-    "sails.js",
-    "parse"
+    "sails"
   ],
-  "author": "Murilo Polese",
+  "contributors": [
+    {
+      "name": "Murilo Polese"
+    },
+    {
+      "name": "Tim Skaggs",
+      "email": "me@timskaggs.com"
+    }
+  ],
   "license": "BSD",
   "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tskaggs/sails-parse.git"
+  },
   "dependencies": {
+    "waterline-adapter-tests": "git://github.com/balderdashy/waterline-adapter-tests.git#associations",
     "async": "0.1.22",
-    "underscore": "*",
-    "kaiseki": "*"
+    "lodash": "~2.0.0",
+    "kaiseki": "~0.5.4",
+    "waterline-errors": "~0.10.0",
+    "mocha": "*",
+    "root-require": "~0.2.0",
+    "captains-log": "~0.10.6"
+  },
+  "devDependencies": {
+    "waterline-adapter-tests": "git://github.com/balderdashy/waterline-adapter-tests.git#associations",
+    "mocha": "*",
+    "root-require": "~0.2.0",
+    "captains-log": "~0.10.6"
+  },
+  "sailsAdapter": {
+    "sailsVersion": "~0.10.0",
+    "implements": [
+      "semantic",
+      "queryable",
+      "associations"
+    ]
   },
   "gitHead": "01978907dd4610820ed0e86578a5381be02ad99e",
   "bugs": {
-    "url": "https://github.com/murilopolese/sails-parse/issues"
+    "url": "https://github.com/tskaggs/sails-parse/issues"
   },
+  "homepage": "https://github.com/tskaggs/sails-parse",
+  "_id": "sails-parse@0.10.0",
   "directories": {
     "test": "test"
   },
+  "_from": "sails-parse@0.10.0",
   "devDependencies": {}
 }

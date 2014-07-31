@@ -1,5 +1,5 @@
 {
-  "name": "sails-parse",
+  "name": "waterline-sails-parse",
   "version": "0.10.0",
   "description": "sails-parse adapter for Sails / Waterline",
   "main": "adapter.js",
@@ -30,7 +30,8 @@
   "dependencies": {
     "async": "0.1.22",
     "lodash": "~2.0.0",
-    "kaiseki": "~0.5.4"
+    "kaiseki": "~0.5.4",
+    "moment": "~2.8.0"
   },
   "devDependencies": {
     "waterline-adapter-tests": "~0.10.0",

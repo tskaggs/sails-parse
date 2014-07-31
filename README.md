@@ -1,6 +1,7 @@
 ![image_squidhome@2x.png](http://i.imgur.com/RIvu9.png)
 
-# waterline-sails-parse
+# sails-parse
+> Built for 0.10.x
 
 Provides easy access to `sails-parse` from Sails.js & Waterline.
 
@@ -14,7 +15,7 @@ Strict adherence to an adapter specification enables the (re)use of built-in gen
 To install this adapter, run:
 
 ```sh
-$ npm install waterline-sails-parse
+TBD
 ```
 
 

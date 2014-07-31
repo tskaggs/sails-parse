@@ -1,16 +1,20 @@
 {
   "name": "sails-parse",
   "version": "0.10.0",
-  "description": "Parse.com API adapter",
-  "main": "./lib/adapter.js",
+  "description": "sails-parse adapter for Sails / Waterline",
+  "main": "adapter.js",
   "scripts": {
     "test": "node test/integration/runner -R spec -b"
   },
+  "repository": {"type":"git","url":"git://github.com/balderdashy/waterline-%s.git"},
   "keywords": [
     "parse",
-    "orm",
+    "sails-parse",
+    "adapter",
+    "sails",
     "waterline",
-    "sails"
+    "sails.js",
+    "plugin"
   ],
   "contributors": [
     {
@@ -21,45 +25,24 @@
       "email": "me@timskaggs.com"
     }
   ],
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tskaggs/sails-parse.git"
-  },
   "dependencies": {
-    "waterline-adapter-tests": "git://github.com/balderdashy/waterline-adapter-tests.git#associations",
     "async": "0.1.22",
     "lodash": "~2.0.0",
-    "kaiseki": "~0.5.4",
-    "waterline-errors": "~0.10.0",
-    "mocha": "*",
-    "root-require": "~0.2.0",
-    "captains-log": "~0.10.6"
+    "kaiseki": "~0.5.4"
   },
   "devDependencies": {
-    "waterline-adapter-tests": "git://github.com/balderdashy/waterline-adapter-tests.git#associations",
+    "waterline-adapter-tests": "~0.10.0",
     "mocha": "*",
-    "root-require": "~0.2.0",
-    "captains-log": "~0.10.6"
+    "captains-log": "~0.11.0"
   },
-  "sailsAdapter": {
-    "sailsVersion": "~0.10.0",
-    "implements": [
+  "waterlineAdapter": {
+    "type": "sails-parse",
+    "interfaces": [
       "semantic",
-      "queryable",
-      "associations"
-    ]
-  },
-  "gitHead": "01978907dd4610820ed0e86578a5381be02ad99e",
-  "bugs": {
-    "url": "https://github.com/tskaggs/sails-parse/issues"
-  },
-  "homepage": "https://github.com/tskaggs/sails-parse",
-  "_id": "sails-parse@0.10.0",
-  "directories": {
-    "test": "test"
-  },
-  "_from": "sails-parse@0.10.0",
-  "devDependencies": {}
+      "queryable"
+    ],
+    "waterlineVersion": "~0.10.0"
+  }
 }
